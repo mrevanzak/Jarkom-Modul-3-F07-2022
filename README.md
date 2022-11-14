@@ -1,4 +1,20 @@
-# Jarkom-Modul-3-F07-2022
+# JARKOM Soal Shift Modul 3
+
+## Daftar isi
+
+- [Anggota Kelompok](#anggota-kelompok)
+- [Nomor 1](#nomor-1)
+- [Nomor 2](#nomor-2)
+- [Nomor 3](#nomor-3)
+- [Nomor 4](#nomor-4)
+- [Nomor 5](#nomor-5)
+- [Nomor 6](#nomor-6)
+- [Nomor 7](#nomor-7)
+- [Nomor 1-Proxy](#nomor-1-proxy)
+- [Nomor 2-Proxy](#nomor-2-proxy)
+- [Nomor 3-Proxy](#nomor-3-proxy)
+- [Nomor 4-Proxy](#nomor-4-proxy)
+- [Nomor 5-Proxy](#nomor-5-proxy)
 
 ## Anggota Kelompok F07
 
@@ -182,6 +198,8 @@ Akan muncul 3 pertanyaan, tekan saja enter untuk melanjutkan. Nilainya akan teri
 ![Screenshot from 2022-11-13 18-05-00](https://user-images.githubusercontent.com/60770478/201518493-e0794011-98d3-4c44-a64b-3aa1ee85938b.png)
 
 ## Nomor 3
+Client yang melalui Switch1 mendapatkan range IP dari [prefix IP].1.50 - [prefix IP].1.88 dan [prefix IP].1.120 - [prefix IP].1.155 
+
 ### Westalis
 ```
 echo '
@@ -225,6 +243,8 @@ iface eth0 inet dhcp
 ' > /etc/network/interfaces
 ```
 ## Nomor 4
+Client yang melalui Switch3 mendapatkan range IP dari [prefix IP].3.10 - [prefix IP].3.30 dan [prefix IP].3.60 - [prefix IP].3.85
+
 ### Westalis
 ```
 echo '
@@ -288,6 +308,8 @@ iface eth0 inet dhcp
 ```
 
 ## Nomor 5
+Client mendapatkan DNS dari WISE dan client dapat terhubung dengan internet melalui DNS tersebut
+
 ### WISE
 ```
 echo '
@@ -310,6 +332,8 @@ service bind9 restart
 ![Screenshot from 2022-11-13 18-10-55](https://user-images.githubusercontent.com/60770478/201518697-43e0b045-f060-4dac-9c8b-63874c42a51a.png)
 
 ## Nomor 6
+Lama waktu DHCP server meminjamkan alamat IP kepada Client yang melalui Switch1 selama 5 menit sedangkan pada client yang melalui Switch3 selama 10 menit. Dengan waktu maksimal yang dialokasikan untuk peminjaman alamat IP selama 115 menit. 
+
 ### Westalis
 ```
 echo '
@@ -368,6 +392,8 @@ Hasilnya akan menunjukkan IP menuju WISE yaitu : 10.32.2.2
 ![Screenshot from 2022-11-13 18-24-27](https://user-images.githubusercontent.com/60770478/201519194-e9915e3c-06b9-492d-8441-91db6b143e0a.png)
 
 ## Nomor 7
+Loid dan Franky berencana menjadikan Eden sebagai server untuk pertukaran informasi dengan alamat IP yang tetap dengan IP [prefix IP].3.13 (
+
 ### Eden
 ```
 ip a
@@ -431,6 +457,8 @@ Restart Node Eden dan cek IP terbarunya
 ![Screenshot from 2022-11-13 18-32-08](https://user-images.githubusercontent.com/60770478/201519509-f2b8a863-ac88-4018-bde0-333283bd2a41.png)
 
 ## Nomor 1 Proxy
+Client hanya dapat mengakses internet diluar (selain) hari & jam kerja (senin-jumat 08.00 - 17.00) dan hari libur (dapat mengakses 24 jam penuh)
+
 ### Berlint
 Pastikan auto update waktu dan tanggal pada komputer kita mati agar dapat mengubah tanggal dan waktu pada terminal.
 ```
@@ -479,6 +507,8 @@ lynx google.com
 ![Screenshot from 2022-11-08 01-30-29](https://user-images.githubusercontent.com/60770478/201519736-6b40d1a3-d93a-4712-97c3-71d10bfc523b.png)
 
 ## Nomor 2 Proxy
+Adapun pada hari dan jam kerja sesuai nomor (1), client hanya dapat mengakses domain loid-work.com dan franky-work.com (IP tujuan domain dibebaskan)
+
 ### WISE
 ```
 echo '
@@ -574,6 +604,8 @@ lynx google.com
 ![Screenshot from 2022-11-07 20-30-17](https://user-images.githubusercontent.com/60770478/201520048-729ae5c2-a944-49f3-a445-236c5c48fb92.png)
 
 ## Nomor 3 Proxy
+Saat akses internet dibuka, client dilarang untuk mengakses web tanpa HTTPS. (Contoh web HTTP: http://example.com)
+
 ### Berlint
 ```
 echo '
@@ -610,6 +642,9 @@ lynx https://www.example.com
 ![Screenshot from 2022-11-08 01-30-10-1](https://user-images.githubusercontent.com/60770478/201520299-ad9a8490-94cd-476b-89eb-6039a23df312.png)
 
 ## Nomor 4 Proxy
+Agar menghemat penggunaan, akses internet dibatasi dengan kecepatan maksimum 128 Kbps pada setiap host (Kbps = kilobit per second; lakukan pengecekan pada tiap host, ketika 2 host akses internet pada saat bersamaan, keduanya mendapatkan speed maksimal yaitu 128 Kbps)
+
+
 ### Berlint
 ```
 echo '
@@ -663,6 +698,8 @@ speedtest
 
 
 ## Nomor 5 Proxy
+Setelah diterapkan, ternyata peraturan nomor (4) mengganggu produktifitas saat hari kerja, dengan demikian pembatasan kecepatan hanya diberlakukan untuk pengaksesan internet pada hari libur
+
 ### Berlint
 ```
 echo '
