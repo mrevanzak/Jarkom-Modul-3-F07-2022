@@ -18,8 +18,11 @@
 - Client : NewstonCastle, KemonoPark
 - Prefix : 10.32
 
-Buat Topologi
-<img width="606" alt="image" src="https://user-images.githubusercontent.com/60770478/201517888-42557db2-1216-4aa1-89da-dc9693d1adb2.png">
+> Buat Topologi
+
+![Screenshot from 2022-11-13 18-00-20](https://user-images.githubusercontent.com/60770478/201517888-42557db2-1216-4aa1-89da-dc9693d1adb2.png)
+
+### Konfigurasi IP
 
 > Konfigurasi Ostania
 ```
@@ -41,7 +44,6 @@ iface eth3 inet static
 	address 10.32.3.1
 	netmask 255.255.255.0
 ```
-### Konfigurasi IP
 > Konfigurasi SSS
 ```
 auto eth0
