@@ -561,25 +561,6 @@ lynx google.com
 > internet tidak bisa diakses
 ![Screenshot from 2022-11-07 20-30-17](https://user-images.githubusercontent.com/60770478/201520048-729ae5c2-a944-49f3-a445-236c5c48fb92.png)
 
-### Garden
-```
-export http_proxy="http://10.32.2.3:8080"
-
-date -s "7 NOV 2022 18:30:00"
-
-lynx franky-work.com
-lynx loid-work.com
-lynx google.com
-```
-> franky-work.com bisa diakses
-![Screenshot from 2022-11-08 01-30-03](https://user-images.githubusercontent.com/60770478/201520119-14f586c5-1036-4d4f-8d29-c4fe10d6e927.png)
-
-> loid-work.com bisa diakses
-![Screenshot from 2022-11-08 01-30-10](https://user-images.githubusercontent.com/60770478/201520122-01908771-13fe-48f7-bdce-bf8abe085ab8.png)
-
-> internet bisa diakses
-![Screenshot from 2022-11-08 01-30-22](https://user-images.githubusercontent.com/60770478/201520128-62c51e73-ebe6-4363-a433-90d79151b514.png)
-
 ## Nomor 3 Proxy
 ### Berlint
 ```
@@ -617,15 +598,103 @@ lynx https://www.example.com
 ![Screenshot from 2022-11-08 01-30-10-1](https://user-images.githubusercontent.com/60770478/201520299-ad9a8490-94cd-476b-89eb-6039a23df312.png)
 
 ## Nomor 4 Proxy
-### SSS
-### Garden
 ### Berlint
+```
+echo '
+include /etc/squid/acl.conf
+
+http_port 8080
+visible_hostname Berlint
+
+acl WORKSITES dstdomain "/etc/squid/work-sites.acl"
+http_access allow WORKSITES
+http_access deny WORKING
+http_access allow all
+
+delay_pools 1
+delay_class 1 2 
+delay_access 1 allow all
+delay_parameters 1 none 16000/32000
+' > /etc/squid/squid.conf
+
+service squid restart
+```
+![proxy4berlint](https://user-images.githubusercontent.com/60770478/201641079-564e6c4e-7dab-492d-ad77-f117a17c8d8c.png)
+
 ### SSS
+```
+unset http_proxy
+
+apt-get install speedtest-cli -y
+
+export PYTHONHTTPSVERIFY=0
+export http_proxy="http://10.32.2.3:8080"
+
+date -s "7 NOV 2022 18:30:00"
+speedtest
+```
+![sss](https://user-images.githubusercontent.com/60770478/201641342-271e356a-2be6-4dbe-a62c-c301ec8b5d55.png)
+
 ### Garden
+```
+unset http_proxy
+
+apt-get install speedtest-cli -y
+
+export PYTHONHTTPSVERIFY=0
+export http_proxy="http://10.32.2.3:8080"
+
+date -s "7 NOV 2022 18:30:00"
+speedtest
+```
+![garden](https://user-images.githubusercontent.com/60770478/201641515-493e5cae-5421-4999-b9cd-436665785186.png)
+
 
 ## Nomor 5 Proxy
 ### Berlint
-### SSS
-### Garden
+```
+echo '
+include /etc/squid/acl.conf
 
-## Final Test Proxy
+http_port 8080
+visible_hostname Berlint
+
+acl WORKSITES dstdomain "/etc/squid/work-sites.acl"
+http_access allow WORKSITES
+http_access deny WORKING
+http_access allow all
+
+acl OPEN_TIME time MTWHF
+delay_pools 1
+delay_class 1 2
+delay_access 1 allow !OPEN_TIME
+delay_parameters 1 none 16000/32000
+' > /etc/squid/squid.conf
+
+service squid restart
+```
+![Screenshot from 2022-11-07 01-30-05](https://user-images.githubusercontent.com/60770478/201642111-46761b5d-50f2-435c-868a-bcb1d560b1b0.png)
+
+### SSS
+```
+unset http_proxy
+
+export PYTHONHTTPSVERIFY=0
+export http_proxy="http://10.32.2.3:8080"
+
+date -s "6 NOV 2022 18:30:00"
+speedtest
+```
+![Screenshot from 2022-11-07 01-37-16](https://user-images.githubusercontent.com/60770478/201642054-6a41f6eb-19e3-43da-a6ff-3e81b71ec0aa.png)
+
+### Garden
+```
+unset http_proxy
+
+export PYTHONHTTPSVERIFY=0
+export http_proxy="http://10.32.2.3:8080"
+
+date -s "7 NOV 2022 13:30:00"
+speedtest
+```
+![Screenshot from 2022-11-07 20-00-01](https://user-images.githubusercontent.com/60770478/201641949-4d894288-a46a-440d-a0e4-d2103806a5ff.png)
