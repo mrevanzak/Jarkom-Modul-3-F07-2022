@@ -451,6 +451,8 @@ http_access allow all
 
 service squid restart
 ```
+![Screenshot from 2022-11-13 18-34-55](https://user-images.githubusercontent.com/60770478/201649316-4a38809f-d3f1-4f67-8296-ffdafd996161.png)
+
 
 ### SSS
 ```
