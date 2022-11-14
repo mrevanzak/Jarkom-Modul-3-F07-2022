@@ -1,4 +1,12 @@
-# Jarkom-Modul-3-F07-2022-
+# Jarkom-Modul-3-F07-2022
+
+## Anggota Kelompok F07
+
+| NRP        | NAMA                       |
+| ---------- | -------------------------- |
+| 5025201145 | Mochamad Revanza Kurniawan |
+| 5025201208 | Bagus Febrian Dali Hidayat |
+| 5025201241 | Jabalnur                   |
 
 ## Nomor 1
 ### Buat Topologi
